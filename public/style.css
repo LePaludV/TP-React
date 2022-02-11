@@ -1,0 +1,10 @@
+.container {
+    padding-top: 50px;
+    width: 720px;
+    margin: auto;
+}
+
+.trash.icon,
+#aide {
+    cursor: pointer;
+}
