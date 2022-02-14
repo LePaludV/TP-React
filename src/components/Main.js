@@ -1,11 +1,15 @@
 
 import UnConcert from './UnConcert';
-import dates from "./dates.json"
+import dates from "../datas/dates.json"
 import React,{useState} from 'react';
 
-const Main = () => {
-    const [data,setData] = useState(dates);
+const Main = ({nbrConcert,setNbrConcert}) => {
+    const [concerts,setConcerts] = useState(dates);
 
+   const handleSupprConcert=(n)=>{
+    console.log("Concert à suppr",n);
+   }
+   setNbrConcert(concerts.length)
     return (
         <div className="Main">
             <table className="ui celled table">
@@ -20,7 +24,7 @@ const Main = () => {
                     </tr>
                 </thead>
 			<tbody>
-            {data.map((concert) => (<UnConcert concert={concert} key={concert.ville} />))}
+            {concerts.map((concert) =>(<UnConcert concerts={concerts} setConcerts={setConcerts} concert={concert} key={concert.ville} />))}
                 
             </tbody>
             </table>
