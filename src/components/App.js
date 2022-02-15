@@ -2,12 +2,20 @@ import React,{useState} from 'react';
 import Main from './Main';
 import Footer from './Footer'
 import Title from './Title';
+import Form from './Form';
+import dates from '../datas/dates.json'
 const App = () => {
-  const [nbrConcert, setNbrConcert] = useState(0);
+
+  const [concerts,setConcerts] = useState(dates);
+
+  //const [nbrConcert, setNbrConcert] = useState(concerts.length);
+  
+  
   return (
     <div className="ui container">
-      <Title nbrConcert={nbrConcert}></Title>
-      <Main nbrConcert={nbrConcert} setNbrConcert={setNbrConcert}></Main>
+      <Title concerts={concerts}></Title>
+      <Form concerts={concerts} setConcerts={setConcerts} />
+      <Main concerts={concerts} setConcerts={setConcerts} ></Main>
       <Footer></Footer>
     </div>
   );

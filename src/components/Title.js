@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Title = ({nbrConcert}) => {
+const Title = ({concerts}) => {
   
 
 //   function concertAjouté() {
@@ -11,8 +11,8 @@ const Title = ({nbrConcert}) => {
     <div>
       <h1>
         Dates de concert
-        <a ng-init="nbrConcert=0" className="ui circular label">
-          {nbrConcert}
+        <a className="ui circular label">
+          {concerts.length}
         </a>
       </h1>
     </div>

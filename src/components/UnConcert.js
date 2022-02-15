@@ -1,15 +1,15 @@
-import React,{useState} from 'react';
+import React from 'react';
 
 
 
 
-const UnConcert = ({concerts,setConcerts, concert }) => {
+const UnConcert = ({concerts,setConcerts, concert,setShowSupprMsg }) => {
     const handleSuppr=(c) =>{
-        const newList = concerts.filter((concert)=> concert.ville !== c)
-
+        const newList = concerts.filter((concert)=> concert !== c)
         //console.log(c);
         //console.log(newList);
         setConcerts(newList)
+        setShowSupprMsg(true)
     }
     return (
         
@@ -20,7 +20,7 @@ const UnConcert = ({concerts,setConcerts, concert }) => {
             <td>{concert.date}</td>
             <td>{concert.heure}</td>
             <td>
-                <button onClick={() => {handleSuppr(concert.ville)}}><i className="trash outline icon"></i></button>
+                <span onClick={() => {handleSuppr(concert)}}><i className="trash outline icon"></i></span>
             </td>
     
         </tr>
